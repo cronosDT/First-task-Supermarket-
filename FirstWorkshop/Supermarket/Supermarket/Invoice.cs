@@ -25,18 +25,11 @@
 
         public override string ToString()
         {
-            string products = "";
-            foreach (Product product in _products)
-            {
-                products += product.ToString() + "\n\n";
-            }
-
             return $"RECEIPT" +
                 $"\n------------------------------------------------- " +
-                $"\n{products}" +
-                $"                        ==================" +
-                $"\nTOTAL:          {$"{ValueToPay():C2}",18}";
-
+                $"\n{string.Join("\n",_products)}" +
+                $"\n                        ==================" +
+                $"\nTOTAL:                  {$"{ValueToPay():C2}",18}";
         }
     }
 }
