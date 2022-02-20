@@ -14,21 +14,12 @@
             };
             return payroll - (payroll * (decimal)Discount);
         }
-
-        public string ProductName()
-        {
-            string productsName = "";
-            foreach (Product product in Products)
-            {
-                productsName += product.Description + ", ";
-            };
-            return productsName;
-        }
-
         public override string ToString()
         {
+            string products = "";
+            Products.ForEach((product) => { products += product.Description + ", "; });
             return $" {Id} - {Description}" +
-                $"\n\tProducts......: {ProductName()}" +
+                $"\n\tProducts......: {products}" +
                 $"\n\tDiscount......: {$"{Discount:P2}",18}" +
                 $"\n\tValue.........: {$"{ValueToPay():C2}",18}";
         }
