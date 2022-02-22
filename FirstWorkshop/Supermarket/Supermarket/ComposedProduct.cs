@@ -16,10 +16,10 @@
         }
         public override string ToString()
         {
-            string products = "";
-            Products.ForEach((product) => { products += product.Description + ", "; });
+            List<string> products = new List<string>();
+            Products.ForEach((product) => { products.Add(product.Description); });
             return $" {Id} - {Description}" +
-                $"\n\tProducts......: {products}" +
+                $"\n\tProducts......: {string.Join(", ",products)}" +
                 $"\n\tDiscount......: {$"{Discount:P2}",18}" +
                 $"\n\tValue.........: {$"{ValueToPay():C2}",18}";
         }
