@@ -9,8 +9,8 @@
         public abstract decimal ValueToPay();
         public override string ToString()
         {
-            return $" {Id} - {Description}" +
-                $"\n\tPrice.........: {$"{Price:c2}",18}" +
+            return $"  {Id}  {Description}" +
+                $"\n\tPrice.........: {$"{Price:C2}",18}" +
                 $"\n\tTax...........: {$"{Tax:P2}",18}";
         }
     }
